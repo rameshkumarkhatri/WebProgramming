@@ -8,22 +8,32 @@ and open the template in the editor.
     Author     : Ramesh Kumar
 */
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
     color: #A4A400;
-    background: #F0F0F0;
-    font-family: Lucida Sans Unicode, Helvetica, Arial, sans-serif;
+    /*background: #F0F0F0;*/
+    font-family: "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
     text-decoration: underline;
     padding: 2pt;
-    display: table;
+    /*display: table; /* to make the width tighten*/
+    letter-spacing:  0.25em;
+    font-size: 18pt;
+
     
+
 }
 
-h1 {
+/*h1 {
     font-size: 22pt;
     text-align: center;
-    display: flex;
+}*/
+
+h1 span {
+    background-color: #F0F0F0;
 }
 
+h3 span {
+    background-color: #F0F0F0;
+}
 h2, h3 {
     font-size: 18pt;
 }
@@ -32,12 +42,17 @@ body {
 /*    background: white;*/
     background-image: url("background.jpg");
     background-repeat: repeat;
-    text-color: #404040;
+    color: #404040;
+    background-attachment: fixed;
+    font-family: Georgia, Garamond, serif;
+
+
 }
 
-.title {
+.mainHeading {
     text-align: center;
-    font-size: 22pt
+    font-size: 22pt;
+       font-weight: bold;
 }
 
 .comments {
@@ -62,14 +77,7 @@ ul {
     list-style-image: url('pie_icon.gif');
 }
 
-.heading-container {
-    justify-content: center;
-}
-
-#validator {
-    float: right
-}
-
-#copyright {
+#bottom-view {
     float: right;
+    text-align: right
 }
