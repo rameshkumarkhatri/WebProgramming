@@ -1,0 +1,75 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 2, 2018, 10:06:41 PM
+    Author     : Ramesh Kumar
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    color: #A4A400;
+    background: #F0F0F0;
+    font-family: Lucida Sans Unicode, Helvetica, Arial, sans-serif;
+    text-decoration: underline;
+    padding: 2pt;
+    display: table;
+    
+}
+
+h1 {
+    font-size: 22pt;
+    text-align: center;
+    display: flex;
+}
+
+h2, h3 {
+    font-size: 18pt;
+}
+
+body {
+/*    background: white;*/
+    background-image: url("background.jpg");
+    background-repeat: repeat;
+    text-color: #404040;
+}
+
+.title {
+    text-align: center;
+    font-size: 22pt
+}
+
+.comments {
+    background-color: rgb(255,254,178);
+    font-style: italic;
+    margin-left: 30pt;
+    margin-right: 30pt;
+}
+
+
+p,li {
+  font-size: 11pt;
+  font-family: Georgia, Garamond, serif;
+}
+
+
+a{
+    color:#A4A400;
+}
+
+ul {
+    list-style-image: url('pie_icon.gif');
+}
+
+.heading-container {
+    justify-content: center;
+}
+
+#validator {
+    float: right
+}
+
+#copyright {
+    float: right;
+}
