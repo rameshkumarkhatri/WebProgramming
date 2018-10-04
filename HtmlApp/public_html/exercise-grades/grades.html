@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Retrieve Grade</title>
+        <meta charset="UTF-8">
+        <link href="grades.css" type="text/css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Retrieve your grade</h1>
+        <form action="http://mumstudents.org/params.php">
+            <fieldset>
+                <legend>Grades Inquiry Form</legend>
+                <label class="static-field">Student Name: </label> <input type="text" name="name" class="input-text"/><br>
+                <label class="static-field">Student ID:</label> <input type ="text" name="id" class="input-text" maxLength="6"/><br>
+                <label class="static-field">Course:</label>
+                <select name="course" class="option">
+                    <option>MPP</option>
+                    <option>WAP</option>
+                    <option>EA</option>
+                </select>
+                <br>
+                <label class="static-field">Entry:</label> 
+                <label><input type ="radio" name="enty" value="April" checked=""/>April </label><label><input type ="radio" name="enty" value="August"/>August</label><br>
+                <br><label><input type ="checkbox" name="confirmation" class="checkbox"/> I am confirming that I am not lying and am checking my own grades.</label>
+                <br>
+                <br>
+                <input type="submit" value="Get Grade!" id="submit"/>
+            </fieldset>
+        </form>
+    </body>
+</html>

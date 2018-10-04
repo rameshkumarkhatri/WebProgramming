@@ -1,0 +1,46 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 4, 2018, 1:57:05 PM
+    Author     : rameshkumar
+*/
+
+body {
+    font-family: Arial, New Times Roman;
+    font-size: 12pt;
+    color: cadetblue;
+    background-color: #F0F0F0
+}
+
+h1 {
+    
+}
+.static-field {
+    width: 200px;
+     margin: 5pt;
+   display: inline-block
+}
+
+.input-text {
+    width: 200px;
+    color: cadetblue;
+}
+
+.option {
+    color: cadetblue;
+}
+
+#submit {
+    background-color: cornflowerblue;
+    color: white;
+    width: 200px;
+    height: 40px;
+    font-size: 16pt;
+}
+
+.checkbox {
+    margin-left: 10px;
+}
