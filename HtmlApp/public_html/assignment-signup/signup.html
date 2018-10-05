@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>NerdLuv</title>
+        <link href="nerdluv.css" type="text/css" rel="stylesheet"/>
+        <meta charset="UTF-8">
+        <link href="images/heart.gif" type="image/gif" rel="shortcut icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <img src="images/nerdluv.png" alt="banner logo" /> <br />
+            where meek geeks meet
+        </header>
+
+        <form target=" signup-submit.php" >
+            <fieldset>
+                <legend>New User Signup</legend>
+                <label class="label-left"> Name: </label><input type="text" name="name" maxlength="16"/> <br>
+                <label class="label-left"> Gender: </label> <label><input type="radio" name="gender" value="male" checked/> Male</label>
+                <label class="label-left"><input type="radio" name="gender" value="female"/> Female</label> <br>
+                <label class="label-left"> Age: </label><input type="text" name="age" maxlength="2" size="6"/> <br>
+                <label class="label-left"> Personality Type: </label><input type="text" name="personality" maxlength="2" size="6"/>
+                (<a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp" target="_blank">Don't know your type</a>)
+                <br>
+                <label class="label-left"> Favorite OS:</label><select name="favorite-os">
+                    <option>Windows</option>
+                    <option>Mac OS X</option>
+                    <option>Linux</option>
+                </select>
+                <br>
+                <label class="label-left">Seeking Age:</label><input class="numberInput" type="text" name="min" placeholder="Min" maxlength="2" size="6"/> <input type="text" name="max" placeholder="Max" maxlength="2" size="6"/>
+                <br>
+                <input type="submit" value="Sign Up"/>
+            </fieldset>
+        </form>
+
+        <!-- shared page bottom HTML -->
+        <p>
+            This page is for single nerds to meet and date each other!  Type in your personal information and wait for the nerdly luv to begin!  Thank you for using our site.
+        </p>
+        <footer>
+            <hr />
+            <p>
+                Results and page (C) Copyright NerdLuv Inc.
+            </p>
+
+            <ul>
+                <li>
+                    <a href="index.php">
+                        <img src="images/back.gif" alt="icon" />
+                        Back to front page
+                    </a>
+                </li>
+            </ul>
+
+            <a href="https://webster.cs.washington.edu/validate-html.php">
+                <img src="images/w3c-html5.png" alt="Valid HTML" />
+            </a>
+            <a href="https://webster.cs.washington.edu/validate-css.php">
+                <img src="images/w3c-css.png" alt="Valid CSS" />
+            </a>
+        </footer>
+    </body>
+</html>
