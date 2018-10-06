@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>Servlets</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <pre> 1. What is the difference between a web server and a web container?
+    Web Server: It provides HTTP requests and HTTP responses. It handle request from client 
+    only through HTTP protocol. It contains web container, web application mostly deployed on web servers.
+    Web Container: It maintains the lifecycle of servlet object. Call the service method for that 
+    servlet object, and passing the HttpServletRequest and HttpServletResponse Object.
+
+2. What is a servlet?
+   A servlet is server-side java code that can handle http requests and return dynamic content.
+   Servlet: is basis of dynamic web application. Servlets process information from a request and generate new information in a response object.
+
+3. How do web servers and web containers interact with servlets?
+   Web servers and containers interact with servlets by when a request comes from a client then web 
+   server checks wether is it is for web server then it passes the request data to servlet container.
+   Then servlet container locates the servlet, create request and response object and passes to the 
+   servlet object as this will done in separate thread. Web container returns the response received 
+   by the servlets to the web server.
+
+4. Who creates request objects?
+   Web container creates the request object.
+
+5. What are the states in the servlet lifecycle?
+
+   Load, Create, Init, Service, Destroy
+
+6. Who calls init and when?
+
+   Web container call the init when instance of Servlets does not exists.
+
+7. Which of init, service, and doGet should you override?
+
+   doGet method will override.
+
+8. In what sense are servlets multi-threaded?
+
+   Servlets are multithread mean every request is running in new thread.
+
+9. What are the implications of this for servlet instance variables? 
+
+   All threads uses the instance variables.	
+        </pre>
+    </body>
+</html>
