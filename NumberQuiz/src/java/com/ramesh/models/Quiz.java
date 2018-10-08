@@ -32,12 +32,12 @@ public class Quiz {
         
         
         
-        if(type < Type.getAnswers().length-1 && Type.getAnswers()[type].equals(answer))
+        if(type < Type.getAnswers().length && Type.getAnswers()[type].equals(answer))
         {
            
-            score++;type++;
+            score++;
         }
-        type++;
+            type++;
         if(type == Type.getAnswers().length)
             isQuizOver = true;
     }

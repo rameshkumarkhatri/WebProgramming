@@ -35,9 +35,10 @@ public class QuizServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
+        String start = request.getParameter("start");
         HttpSession session = request.getSession();
-//        session.invalidate();
-        if (session.isNew()) {
+        if ((start != null && start.equals("1")) || session.isNew()) {
             quiz = new Quiz(0, 0);
         } else {
             quiz = (Quiz) session.getAttribute("quiz");
