@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <pre>
+          
+State Management Quiz 
+1. Can post requests be bookmarked? What are the problems? 
+	Post request can not be bookmarked because web browser bookmarks the url not the parameter in request body. 
+To do this we can use the Postman extension for bookmarking and saving the request.
+
+2. What is the purpose of request dispatching? 3. What is the difference between redirect and request dispatch?
+	Request dispatching is the forwarding of the request to another JSP or servlets. 
+In request dispatch the request and response will forward and web browser does not know about it. 
+But in redirecting web browser get the status code of 30* so it will request to other redirected URL.
+
+4. What is an attribute ? 5. What is the difference between attributes and parameters? 
+	Attribute is an object on server used to promote the communication between components.
+Attribute is name value pair which is string object which are read/write both and parameter are 
+string objects only which is pass through form which are read only.
+
+6. What are dangers of using attributes? 
+
+7. What does it mean to say that http is stateless? Give an example of a stateful protocol. 
+	HTTP is stateless means it does not maintain any state of request after it been request
+ and got response. It is handling each request independently.
+	SMTP: Simple Mail Transfer Protocol is stateful protocol because it maintains the state.
+ Each mail (transaction) goes from multiple request response stages. 
+	
+
+8. Give 5 different methods for maintaining state information (count each attribute scope as one method).
+Hidden files in form
+Cookies
+Request scope
+Session scope
+Application/Context scope	
+9. How long does a session last? 
+	Session default time is 30 minutes/seconds but can be changes by 
+session.setMaxInactiveInterval(20*60); //seconds or calling by timeout or invalidate.
+	
+10. What is a cookie, and how long does a cookie last? 
+	Cookie is used to save the information on web browser. 
+	Cookie if it is temporary then it will destroy when browser get close. If it is permanent 
+then it is defined the server by method setMaxAge(minutes).
+
+11. What is the purpose of URL rewriting?
+	URL rewriting is used to be safe from hacker attacks.
+
+12. Why does the request attribute report ‘null’ for the maintaining state demo?
+
+        </pre>
+    </body>
+</html>
