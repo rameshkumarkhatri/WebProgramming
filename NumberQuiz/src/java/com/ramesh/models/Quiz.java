@@ -31,7 +31,6 @@ public class Quiz {
     public void processAnswer(String answer) {
         
         
-        
         if(type < Type.getAnswers().length && Type.getAnswers()[type].equals(answer))
         {
            
