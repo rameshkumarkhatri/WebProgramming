@@ -22,50 +22,77 @@ import javax.servlet.http.HttpSession;
  */
 public class QuizServlet extends HttpServlet {
 
-   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       request.getSession().setAttribute("score", 0);
-       request.getSession().removeAttribute("1");
-       request.getSession().removeAttribute("2");
-       request.getSession().removeAttribute("3");
-       request.getSession().removeAttribute("4");
-       request.getSession().removeAttribute("0");
-       request.getSession().setAttribute("questionNumber", 0);
-       request.getSession().setAttribute("0", new Quiz(0,0));
-       request.setAttribute("question", Type.getQuestions()[0]);
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().setAttribute("score", 0);
+        request.getSession().removeAttribute("1");
+        request.getSession().removeAttribute("2");
+        request.getSession().removeAttribute("3");
+        request.getSession().removeAttribute("4");
+        request.getSession().removeAttribute("0");
+        request.getSession().setAttribute("questionNumber", 0);
+        request.getSession().setAttribute("0", new Quiz(0, 0));
+        request.setAttribute("question", Type.getQuestions()[0]);
+// request.getSession().setAttribute("showAgeSubmit", "submit"); 
+        RequestDispatcher dispatcher = request.getRequestDispatcher("QuizJSP.jsp");
+        dispatcher.forward(request, response);
+    }
 
-       RequestDispatcher dispatcher = request.getRequestDispatcher("QuizJSP.jsp");
-       dispatcher.forward(request, response);
-   }
-   
-   public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        boolean canGo = false; 
+        if (request.getParameter("age") != null) {
+            try {
+                int age = Integer.parseInt(request.getParameter("answer"));
+                if (age >= 4 && age <= 100) {
+                    session.setAttribute("age", age);
+                    session.setAttribute("showAgeSubmit", "hidden");
+                    canGo = true;
+                }else {
+                    canGo = true;
+                }
+            } catch (Exception e) {
+                canGo = true;
 
-       HttpSession session = request.getSession();
-       int score = (int) session.getAttribute("score");
-       int questionNumber = -1;
-       if(session.getAttribute("questionNumber") != null){
-            questionNumber =  (int) session.getAttribute("questionNumber");
-       }
-       if(questionNumber == -1){
-           questionNumber = 0;
-           session.setAttribute("0", new Quiz(0,0));
-       }else {
-           Quiz quiz = (Quiz) session.getAttribute(questionNumber+"");
-           if(quiz == null) quiz = new Quiz(0,0);
-           if(quiz.processAnswer(request.getParameter("answer"))){
-               score+=quiz.getScore();
-               session.setAttribute("score", score);
-               questionNumber++;
-               session.setAttribute(""+questionNumber, new Quiz(questionNumber,0));               
-           }else session.setAttribute(""+questionNumber, quiz);
-       }
-       session.setAttribute("questionNumber", questionNumber);
-       if(questionNumber>=5){
-          session.setAttribute("grade", Quiz.calculateGrade(score));
-       }else request.setAttribute("question", Type.getQuestions()[questionNumber]);
-       
-       RequestDispatcher dispatcher = request.getRequestDispatcher(questionNumber>=5? "ResultJSP.jsp":"QuizJSP.jsp");
-       dispatcher.forward(request, response);
-   }
-   
-   
+            }
+        }
+        if(canGo){
+            response.sendRedirect("quiz");
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("QuizJSP.jsp");
+//                     dispatcher.forward(request, response);
+                     return;
+        }
+        
+        int score = (int) session.getAttribute("score");
+        int questionNumber = -1;
+        if (session.getAttribute("questionNumber") != null) {
+            questionNumber = (int) session.getAttribute("questionNumber");
+        }
+        if (questionNumber == -1) {
+            questionNumber = 0;
+            session.setAttribute("0", new Quiz(0, 0));
+        } else {
+            Quiz quiz = (Quiz) session.getAttribute(questionNumber + "");
+            if (quiz == null) {
+                quiz = new Quiz(0, 0);
+            }
+            if (quiz.processAnswer(request.getParameter("answer"))) {
+                score += quiz.getScore();
+                session.setAttribute("score", score);
+                questionNumber++;
+                session.setAttribute("" + questionNumber, new Quiz(questionNumber, 0));
+            } else {
+                session.setAttribute("" + questionNumber, quiz);
+            }
+        }
+        session.setAttribute("questionNumber", questionNumber);
+        if (questionNumber >= 5) {
+            session.setAttribute("grade", Quiz.calculateGrade(score));
+        } else {
+            request.setAttribute("question", Type.getQuestions()[questionNumber]);
+        }
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher(questionNumber >= 5 ? "ResultJSP.jsp" : "QuizJSP.jsp");
+        dispatcher.forward(request, response);
+    }
+
 }

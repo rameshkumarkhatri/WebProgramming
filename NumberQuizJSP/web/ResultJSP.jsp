@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link  ref="stylesheet" href="result.css"/>
         <title>Quiz result</title>
     </head>
     <body><h1>The Number Quiz</h1>

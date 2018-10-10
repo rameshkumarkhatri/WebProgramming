@@ -13,7 +13,10 @@
     </head>
     <body>
          <h1>The Number Quiz</h1>
-         
+         <form action = "quiz" method = "post">
+             Enter your age <input type="number" name="age" value="${age}" />
+              <input type="${showAgeSubmit}" />
+         </form>
             <form action = "quiz" method = "post">
             <p>Your current score is ${score}.</p>
             <p>Guess the next number in sequence.</p>

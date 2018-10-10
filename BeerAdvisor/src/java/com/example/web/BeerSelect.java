@@ -27,12 +27,20 @@ public class BeerSelect extends HttpServlet {
         String c = request.getParameter("color");
         BeerExpert be = new BeerExpert();
         List result = be.getBrands(c);
-        PrintWriter out = response.getWriter();
-        out.println("Beer Selection Advice<br>");
-        Iterator it = result.iterator();
-        while(it.hasNext()) {
-        out.print("<br>try: " + it.next());
-        }
+        request.setAttribute("styles", result);
+        
+//        PrintWriter out = response.getWriter();
+//        
+//        out.println("Beer Selection Advice<br>");
+//        Iterator it = result.iterator();
+//        while(it.hasNext()) {
+//        out.print("<br>try: " + it.next());
+//        }
+        
+//OR by JSP
+
+        request.getRequestDispatcher("results.jsp").forward(request, response);
+
         
 //        out.println("<br>Got beer color "+ c);
     }
