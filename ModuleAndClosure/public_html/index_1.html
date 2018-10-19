@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <meta charset="UTF-8">
+    <title>Banking Account</title>
+    <style>
+        #form{
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div{
+            margin: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="form">
+        <h1>Create an account</h1>
+        <div>
+            <label>Account Name:</label>
+            <input type="text" name="accountType" id="accountType" >
+        </div>
+        <div>
+            <label>Deposit:</label>
+            <input type="text" name="depositAmount" id="depositAmount">
+        </div>
+        <div>
+            <button type="submit"  id="createAccount">Create new account</button>
+        </div>
+        <div>
+            <textarea rows="15" cols="50" id="allAccounts"></textarea>
+        </div>
+
+    </div>
+    <script src="test2.js"></script>
+    <script>
+
+        "use strict";
+        (function () {
+            window.onload = function () {
+                document.getElementById("createAccount").onclick = createAccountListener;
+            };
+            let accountInfoList = [];
+            /**
+             * @returns {undefined}
+             */
+            function createAccountListener() {
+                let amount = document.getElementById("depositAmount").value;
+                let accType = document.getElementById("accountType").value;
+                if(amount.length !== 0 && accType.length !== 0){
+                    const accountObj = account(amount, accType);
+                    accountInfoList[accountInfoList.length] = accountObj;
+                    printAccount();
+                }
+            }
+
+            /**
+             * @returns {undefined}
+             */
+            let printAccount = function () {
+                document.getElementById("allAccounts").value = "";
+                let textArea = document.getElementById("allAccounts");
+                for (let v of accountInfoList) {
+                    textArea.value += "Account Name:\t" + v.getName() + " Balance:\t" + v.getAmount() + "\n";
+                }
+            };
+
+            /**
+             * @param {type} amount
+             * @param {type} accType
+             * @returns {account.indexAnonym$0}
+             */
+            let account = function (amount, accType) {
+                let name = accType;
+                let amt = amount;
+
+                return {
+                    getName: function () {
+                        return name;
+                    },
+
+                    getAmount: function () {
+                        return amt;
+                    }
+                };
+            };
+        }());
+
+
+    </script>
+</html>

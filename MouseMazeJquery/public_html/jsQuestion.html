@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <pre>
+            1. What is the difference between the following 2 statements? 
+setTimeout(booyah, 2000);
+This code will wait for 2 seconds to call the booyah method. 
+
+setTimeout(booyah(), 2000);
+This code will call the booyah method immediately because we called the method by booyah().
+ 
+
+2. What do the following 2 alerts display (answer without running the code)? 
+var myfunc = function(a, x) { return a * x; }; 
+var x = myfunc(2, 3); 
+var y = myfunc; 
+alert(x); 
+alert(y(2,3)); 
+
+This will generate 2 alerts contains content “6”. 
+Because x = myfunc(2,3) calles the myfunc and save returns value in x variable;
+Then value of y is myfunc that means y = same function.
+
+
+3. Write functions booyah1 and booyah2 so that in both cases below, an alert box comes up after 2 seconds that says “BOOYAH!” 
+setTimeout(booyah1, 2000); 
+setTimeout(booyah2(), 2000);
+
+function booyah1(){ alert("BOOYAH1"); }
+function booyah2(){ 
+	setTimeout(booyah1, 2000);
+}
+
+function myFunction() {
+  setTimeout(booyah1, 2000); 
+  setTimeout(booyah2(), 2000);
+}
+
+
+ 4. What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the reasons for using it)?
+	Unobtrusive Javascript is the general approach to use the javascript in behavioral way defined in different file of js.
+ Html for content display, css for presentation and js for behavior, like MVC pattern.
+
+        </pre>
+    </body>
+</html>
